@@ -113,6 +113,10 @@ Model Accuracy Metric
 The accuracy metric is one of the most common metrics used to evaluate the performance of a classification model. It is a measure of how often the model correctly predicts the class label compared to the actual labels in the dataset.
 Definition
 Accuracy is defined as the ratio of the number of correct predictions to the total number of predictions made. Mathematically, it can be expressed as:
+
+```
+accuracy = number of correct predictions / total number of predictions
+```
  
 Calculation
 For a classification model, the accuracy is calculated by comparing the predicted labels to the true labels. Here's how it works:
