@@ -18,14 +18,16 @@ Follow these steps to set up the project on your local machine.
 ### Prerequisites
 
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) should be installed on your system.
+- Insall [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
 ### Using `requirements.txt`
 
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/American-Forests/tesa-os-only-pipeline.git
+   cd tesa-os-only-pipeline
+   cd simplify
    ```
 
 2. **Create the Conda Environment**
@@ -33,7 +35,7 @@ Follow these steps to set up the project on your local machine.
    Create a new Conda environment and install dependencies from `requirements.txt`:
 
    ```sh
-   conda create --name myenv --file requirements.txt
+   conda create --name OS-only-GIS --file requirements.txt
    ```
 
 3. **Activate the Conda Environment**
@@ -41,7 +43,7 @@ Follow these steps to set up the project on your local machine.
    Activate the environment you just created:
 
    ```sh
-   conda activate myenv
+   conda activate OS-only-GIS
    ```
 
 4. **Verify the Installation**
@@ -57,8 +59,8 @@ Follow these steps to set up the project on your local machine.
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/American-Forests/tesa-os-only-pipeline.git
+   cd tesa-os-only-pipeline
    ```
 
 2. **Create the Conda Environment**
@@ -74,7 +76,7 @@ Follow these steps to set up the project on your local machine.
    Activate the environment you just created:
 
    ```sh
-   conda activate myenv
+   conda activate OS-only-GIS
    ```
 
 4. **Verify the Installation**
@@ -106,7 +108,7 @@ conda deactivate
 To remove the environment completely, use:
 
 ```sh
-conda env remove -n myenv
+conda env remove -n OS-only-GIS
 ```
 
 ## Usage

@@ -28,14 +28,15 @@ The script consists of the following main parts:
 
 ### Setting Up the environment
 
-1.	Create a Conda Environment
+* Create a Conda Environment
 Open your terminal or command prompt and create a new conda environment:
 conda create --name parcel-labeling python=3.8
-2.	Activate the Environment
+* Activate the Environment
 Activate the newly created environment:
 conda activate parcel-labeling
-3.	Install Required Packages
+* Install Required Packages
 Make sure you have the following Python libraries installed:
+```
 •	geopandas
 •	numpy
 •	pandas
@@ -45,14 +46,16 @@ Make sure you have the following Python libraries installed:
 •	argparse
 •	joblib
 •	pyyaml
+```
 
 You can install them using the following command:
-pip install geopandas numpy pandas tensorflow shapely scikit-learn joblib pyyaml
+`pip install geopandas numpy pandas tensorflow shapely scikit-learn joblib pyyaml`
 
 
 ### Folder Structure
 
 Ensure your project directory has the following structure:
+```
 your_project_directory/
 │
 ├── parcel_classifier.py
@@ -60,14 +63,15 @@ your_project_directory/
 ├── config_classify.yaml
 ├── training_data.shp
 ├── SanBenito_Training.shp
-├─ Ludlow.shp
-
+├── Ludlow.shp
+```
 
 ## Script Explanation
 
 Feature Engineering
 
 This section calculates various geometric metrics for each polygon in the shapefiles. Key geometric metrics include:
+```
 •	Width and Height: Dimensions of the bounding box.
 •	Diagonal: Length of the diagonal of the bounding box.
 •	Aspect Ratio (ar): Ratio of width to height.
@@ -79,22 +83,22 @@ This section calculates various geometric metrics for each polygon in the shapef
 •	Convex Hull Ratio: Ratio of the polygon’s area to the area of its convex hull.
 •	Bounding Box Aspect Ratio (bounding_box_ar): Aspect ratio of the bounding box.
 •	Perimeter to Area Ratio (perimeter_area_ratio): Ratio of perimeter to area.
-
+```
 
 Loading Data
-The load_data function reads the shapefiles and calculates geometric features for each polygon.
+The `load_data` function reads the shapefiles and calculates geometric features for each polygon.
 
 Labeling Shapes
-The label_shapes function assigns class labels based on predefined rules applied to the geometric metrics.
+The `label_shapes` function assigns class labels based on predefined rules applied to the geometric metrics.
 
 Building and Training the Model
-The train_model function creates a neural network model with batch normalization and dropout layers to prevent overfitting and trains the deep learning model on the labelled training data.
+The `train_model` function creates a neural network model with batch normalization and dropout layers to prevent overfitting and trains the deep learning model on the labelled training data.
 
 Classifying Shapefiles
-The classify_shapefile function uses the trained model to classify new shapefiles based on their geometric properties.
+The `classify_shapefile` function uses the trained model to classify new shapefiles based on their geometric properties.
 
 Main Function
-The main function parses the configuration file and executes either training or classification based on the provided configuration.
+The `main` function parses the configuration file and executes either training or classification based on the provided configuration.
 
 
 ## YAML Configuration Files
