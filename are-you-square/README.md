@@ -63,7 +63,8 @@ your_project_directory/
 ├── config_classify.yaml
 ├── training_data.shp
 ├── SanBenito_Training.shp
-├── Ludlow.shp
+├── LongSkinnyTraining.shp
+├── Franklin_TrainingSet_ForTrain.shp
 ```
 
 ## Script Explanation
