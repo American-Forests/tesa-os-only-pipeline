@@ -1,0 +1,6 @@
+mode: classify
+inputs:
+  - Franklin_TestData.shp
+model: save_modelV05.h5
+scaler: scalerV05.pkl
+output: Franklin_TestData_Classified.shp

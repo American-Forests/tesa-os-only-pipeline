@@ -1,0 +1,8 @@
+mode: train
+inputs:
+  
+  - SanBenito_Training.shp
+  - LongSkinnyTraining.shp
+  - Franklin_TrainingSet_ForTrain.shp
+model: save_modelV05.h5
+scaler: scalerV05.pkl
