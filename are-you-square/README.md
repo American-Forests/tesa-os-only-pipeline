@@ -133,16 +133,16 @@ This configuration file specifies the mode as classify and provides the paths to
 ## Steps to Run Script
 
 1.	Activate Your Environment: Ensure you're in the correct conda environment.
-conda activate parcel-labeling
+`conda activate parcel-labeling`
 
 2.	Install Required Packages: Make sure you have all required packages installed.
-pip install geopandas numpy pandas tensorflow shapely scikit-learn joblib pyyaml
+`pip install geopandas numpy pandas tensorflow shapely scikit-learn joblib pyyaml`
 
 3.	Train the Model: Run the training script with the training configuration file.
-python parcel_classifier.py config_train.yaml
+`python parcel_classifier.py config_train.yaml`
 
 4.	Classify New Data: Run the classification script with the classification configuration file.
-python parcel_classifier.py config_classify.yaml
+`python parcel_classifier.py config_classify.yaml`
 
 
 
