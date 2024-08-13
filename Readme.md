@@ -1,6 +1,6 @@
 # tesa-os-only-pipeline
 
-Repo of OS-only GIS tools for tesa processing (aka 'the pipeline'). Below is how to setup the conda environment used for these tools.
+Repo of OS-only GIS tools for tesa processing (aka 'the pipeline'). Below is how to setup the conda environment used for (most) of these tools (some of the deep learning stuff - like 'are-you-square' is the exception - which will have its own conda instructions in the README).
 
 ## Table of Contents
 
