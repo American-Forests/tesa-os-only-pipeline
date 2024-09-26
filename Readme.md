@@ -79,7 +79,7 @@ conda env remove -n OS-only-GIS
 
 ## Usage
 
-Provide instructions and examples for using your project. Here’s an example:
+For any of the scripts in this repo, please provide instructions and examples for using your project. Here’s an example:
 
 ```sh
 python script.py
