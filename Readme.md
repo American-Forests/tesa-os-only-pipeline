@@ -18,41 +18,7 @@ Follow these steps to set up the project on your local machine.
 ### Prerequisites
 
 - [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) should be installed on your system.
-- Insall [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-
-### Using `requirements.txt`
-
-1. **Clone the Repository**
-
-   ```sh
-   git clone https://github.com/American-Forests/tesa-os-only-pipeline.git
-   cd tesa-os-only-pipeline
-   cd simplify
-   ```
-
-2. **Create the Conda Environment**
-
-   Create a new Conda environment and install dependencies from `requirements.txt`:
-
-   ```sh
-   conda create --name OS-only-GIS --file requirements.txt
-   ```
-
-3. **Activate the Conda Environment**
-
-   Activate the environment you just created:
-
-   ```sh
-   conda activate OS-only-GIS
-   ```
-
-4. **Verify the Installation**
-
-   Ensure all the packages are installed correctly by listing the installed packages:
-
-   ```sh
-   conda list
-   ```
+- Install [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) (maybe)
 
 ### Using `environment.yml`
 
