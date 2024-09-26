@@ -6,4 +6,6 @@ dependencies:
   - numpy
   - pandas
   - gdal
+  - pyshp
+  - shapely
 
