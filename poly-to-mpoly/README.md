@@ -1,7 +1,7 @@
 
-# 'poly-to-mpoly' - a fix-it script for tes blockgroup and muncipalitie files
+# 'poly-to-mpoly' - a fix-it script for tes blockgroup and muncipalities files
 
-This script converts every geom to a mpoly (even if it is a polygon) so that it can past the data tests.
+This script converts every geom to a mpoly (even if it is a polygon) so that it can pass the data tests.
 
 
 ## Authors
