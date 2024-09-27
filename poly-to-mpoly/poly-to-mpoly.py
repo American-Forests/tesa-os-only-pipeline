@@ -1,5 +1,5 @@
-import shapefile
-from shapely.geometry import shape, MultiPolygon, Polygon
+import fiona
+from shapely.geometry import shape, mapping, MultiPolygon, Polygon
 import sys
 import os
 import shutil
@@ -17,36 +17,60 @@ def copy_auxiliary_files(input_filepath, output_filepath):
             shutil.copy(input_file, output_file)
 
 
-def convert_to_mpoly(input_filepath, output_filepath):
-    # Read the input shapefile with specified encoding
-    print(f"input_filepath: {input_filepath}")
-    reader = shapefile.Reader(input_filepath, encoding="latin1")
-    fields = reader.fields[1:]  # skip the deletion flag field
-    field_names = [field[0] for field in fields]
+def convert_polygons_to_multipolygons(input_filepath, output_filepath):
+    print("0 starting conversion...")
+    # Ensure the output directory exists
+    output_dir = os.path.dirname(output_filepath)
+    print(f"1 output_dir === {output_dir}")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
-    # Prepare the writer for the output shapefile
-    print(f"output_filepath: {output_filepath}")
-    writer = shapefile.Writer(output_filepath)
-    writer.fields = reader.fields
+    # Read the input shapefile
+    with fiona.open(input_filepath, "r") as input_shp:
+        print(f"2 input_filepath === {input_filepath}")
+        # Define the schema for the output shapefile
+        schema = input_shp.schema.copy()
+        schema["geometry"] = "MultiPolygon"
 
-    print("Converting polygons to multipolygons...")
-    for sr in reader.shapeRecords():
-        geom = shape(sr.shape.__geo_interface__)
-        if isinstance(geom, Polygon):
-            geom = MultiPolygon([geom])
-        writer.shape(geom)
-        writer.record(*[sr.record[field] for field in field_names])
-
-    print("Conversion complete!")
-    writer.close()
+        # Open the output shapefile
+        with fiona.open(
+            output_filepath,
+            "w",
+            driver=input_shp.driver,
+            crs=input_shp.crs,
+            schema=schema,
+        ) as output_shp:
+            print(f"3 output_filepath === {output_filepath}")
+            print("4 converting polygons to multipolygons...")
+            for feature in input_shp:
+                geom = shape(feature["geometry"])
+                if isinstance(geom, Polygon):
+                    geom = MultiPolygon([geom])
+                feature["geometry"] = mapping(geom)
+                output_shp.write(
+                    {
+                        "geometry": feature["geometry"],
+                        "properties": feature["properties"],
+                    }
+                )
+                # Debugging statement to check the geometry type
+                # print(f"converted geometry === {feature['geometry']['type']}")
+            print("5 polygons converted to multipolygons...")
 
     # Copy auxiliary files
     copy_auxiliary_files(input_filepath, output_filepath)
+    print(f"6 output saved === {output_filepath}")
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python poly-to-mpoly.py <input_filepath> <output_filepath>")
+        sys.exit(1)
+
+    input_filepath = sys.argv[1]
+    output_filepath = sys.argv[2]
+
+    convert_polygons_to_multipolygons(input_filepath, output_filepath)
         sys.exit(1)
 
     input_filepath = sys.argv[1]
