@@ -72,8 +72,3 @@ if __name__ == "__main__":
 
     convert_polygons_to_multipolygons(input_filepath, output_filepath)
         sys.exit(1)
-
-    input_filepath = sys.argv[1]
-    output_filepath = sys.argv[2]
-
-    convert_to_mpoly(input_filepath, output_filepath)
