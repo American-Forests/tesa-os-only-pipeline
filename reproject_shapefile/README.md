@@ -5,6 +5,9 @@ This script reads a shapefile and reprojects it to the CRS you specify.
 
 This file was written to deal with the very common problem you sometimes get when reprojecting in ArcGIS or PostgreSQL (which occassionally has a different projection definitions) and trying to read/compare/modify projections using GDAL etc. 
 
+Note: I've also had problems using this script on a AWS workstation because it doesn't have a dedicated
+'C' drive where the proj file usually lives.
+
 Example of error:
 "
 2024-12-14 11:06:37,029 - INFO - GDAL signalled an error: err_no=1, msg='PROJ: proj_identify: C:\\Program Files\\PostgreSQL\\13\\share\\contrib\\postgis-3.1\\proj\\proj.db lacks DA
