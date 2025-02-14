@@ -45,7 +45,7 @@ Make sure you have the following Python libraries installed:
 `conda activate os-only-gis`
 
 2. Run the file with 'shapefile_path= <location of shapefile to mask by>' and 'input_folder = <location of tiff files>' and 'output_folder = <location of output tiff's>'.
-`python chunker.py`
+`python chunker.py input folder = Y:\CommunityReLeaf\TreeEquityScore\tesa_fake_data\shade_index\Austin\1200\for-chunker shapefile path = Y:\CommunityReLeaf\TreeEquityScore\tesa_fake_data\shade_index\Austin\1200\snippet-for-chunker-final.shp output path=Y:\CommunityReLeaf\TreeEquityScore\tesa_fake_data\shade_index\Austin\1200\chunked '
 
 
 
