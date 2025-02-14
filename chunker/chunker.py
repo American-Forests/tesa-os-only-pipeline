@@ -94,10 +94,10 @@ def chunk_and_mask_tif(tif_path, shapefile_path, output_folder):
 
 if __name__ == "__main__":
     # Configuration
-    input_folder = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/chunker/tiff-folder/raw/landcover"
+    input_folder = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/shade_index/Austin/1200/chunked"
     # shapefile_path = "wa_state/final/study_area.shp"
-    shapefile_path = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/chunker/tiff-folder/final/blockgroups_Whatcom_WA_1983_HARN_reproj.shp"
-    output_folder = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/chunker/output"
+    shapefile_path = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/shade_index/Austin/1200/for-chunker2/test2.shp"
+    output_folder = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/shade_index/Austin/1200/chunked"
 
     os.makedirs(output_folder, exist_ok=True)
 
