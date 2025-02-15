@@ -32,9 +32,9 @@ def reproject_shapefile(shapefile_path, target_crs, output_path):
 
 
 if __name__ == "__main__":
-    shapefile_path = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/chunker/tiff-folder/final/blockgroups_Whatcom_WA_1983_HARN.shp"
-    target_crs = "EPSG:2927"
-    output_path = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/chunker/tiff-folder/final/blockgroups_Whatcom_WA_1983_HARN_reproj.shp"
+    shapefile_path = "Y:/CommunityReLeaf\TreeEquityScore/tesa_fake_data/shade_index/Austin/1200/snippet-for-chunker-final.shp"
+    target_crs = "EPSG:3857"
+    output_path = "Y:/CommunityReLeaf/TreeEquityScore/tesa_fake_data/shade_index/Austin/1200/for-chunker2/test.shp"
 
     # Ask user if reprojection should be performed
     print(f"The current shapefile CRS does not match the target CRS ({target_crs}).")
